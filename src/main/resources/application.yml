@@ -1,0 +1,29 @@
+# Spring
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  application:
+    name: Pelado_Bank
+
+  # H2 database
+  datasource:
+    url: jdbc:h2:mem:pelado_bank
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+
+  # JPA
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  sql:
+    init:
+      platform: h2
+
+  #  Uma mudança que entrou a partir da versão 2.6.0 do Spring Boot.
+  #  Adiciona essa propriedade no application.properties para usar o hateoas e o swagger.
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
